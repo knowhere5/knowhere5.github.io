@@ -1,7 +1,6 @@
 import Bio from "@/components/Bio";
 import BlogList from "@/components/BlogList";
 import SocialLinks from "@/components/SocialLinks";
-import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -9,7 +8,6 @@ const Index = () => {
       <Bio />
       <BlogList />
       <SocialLinks />
-      <Footer />
     </div>
   );
 };
