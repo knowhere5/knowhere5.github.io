@@ -40,7 +40,7 @@ const BlogList = () => {
         <article key={post.id} className="max-w-prose">
           <Link to={`/blog/${post.slug}`} className="block group">
             <div className="flex items-center gap-3 mb-2">
-              <h2 className="text-xl group-hover:text-gray-600 transition-colors">
+              <h2 className="text-xl group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
                 {post.title}
               </h2>
               {isNew(post.date) && (
@@ -49,14 +49,14 @@ const BlogList = () => {
                 </span>
               )}
             </div>
-            <time className="text-sm text-gray-500 mb-2 block">
+            <time className="text-sm text-gray-500 dark:text-gray-400 mb-2 block">
               {new Date(post.date).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
               })}
             </time>
-            <p className="text-gray-600">{post.excerpt}</p>
+            <p className="text-gray-600 dark:text-gray-300">{post.excerpt}</p>
           </Link>
         </article>
       ))}

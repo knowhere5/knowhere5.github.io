@@ -6,13 +6,20 @@ const ThemeToggle = () => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains("dark");
+    // Check localStorage first, then system preference
+    const savedTheme = localStorage.getItem("theme");
+    const isDarkMode = savedTheme === "dark" || 
+      (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    
     setIsDark(isDarkMode);
+    document.documentElement.classList.toggle("dark", isDarkMode);
   }, []);
 
   const toggleTheme = () => {
+    const newTheme = !isDark;
     document.documentElement.classList.toggle("dark");
-    setIsDark(!isDark);
+    localStorage.setItem("theme", newTheme ? "dark" : "light");
+    setIsDark(newTheme);
   };
 
   return (
