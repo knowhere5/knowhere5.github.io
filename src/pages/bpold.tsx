@@ -1,9 +1,9 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown"; // For rendering markdown
 import { BlogPost as BlogPostType } from "@/components/BlogList";
 import { Button } from "@/components/ui/button";
 import { Twitter, Linkedin } from "lucide-react";
-import { marked } from "marked";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -88,10 +88,9 @@ const BlogPost = () => {
           })}
         </time>
 
-        <div
-          className="prose dark:prose-invert"
-          dangerouslySetInnerHTML={{ __html: marked.parse(content) }}
-        />
+        <div className="prose dark:prose-invert">
+          <ReactMarkdown>{content}</ReactMarkdown>
+        </div>
       </article>
 
       <div className="mt-16 mb-8 flex gap-4">
