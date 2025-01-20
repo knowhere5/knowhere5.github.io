@@ -1,10 +1,13 @@
 const Bio = () => {
   return (
     <div className="mb-16 mt-16 pb-16 border-b">
-      <h1 className="text-3xl font-light mb-6">John Doe</h1>
+      <h1 className="text-3xl font-light mb-6">Madhav</h1>
       <p className="text-gray-600 max-w-prose text-lg leading-relaxed">
-        I'm a software engineer writing about technology, programming, and personal growth.
-        Currently building products that help developers be more productive.
+        I majored in Engineering Physics at IIT Delhi, with a minor in Computer Science.
+        I code, I produce music, and I think about transhumanism.
+        My work centers around AI, infosec, network architecture and autonomous systems.
+        I sometimes dream of a strange dystopia where I'm told I'm the last human on Earth—yet
+        the world is populated by robots who believe they're human.
       </p>
     </div>
   );

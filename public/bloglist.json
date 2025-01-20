@@ -1,0 +1,16 @@
+[
+    {
+        "id": "1",
+        "title": "Building a Minimalist Blog",
+        "excerpt": "How I approached building this minimalist blog using React and Tailwind CSS.",
+        "date": "2024-03-20",
+        "slug": "building-a-minimalist-blog"
+    },
+    {
+        "id": "2",
+        "title": "The Power of Simplicity",
+        "excerpt": "Why less is more in software development and life.",
+        "date": "2024-03-15",
+        "slug": "the-power-of-simplicity"
+    }
+]
