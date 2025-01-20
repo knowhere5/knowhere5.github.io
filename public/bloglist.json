@@ -12,5 +12,12 @@
         "excerpt": "Why less is more in software development and life.",
         "date": "2024-03-15",
         "slug": "the-power-of-simplicity"
+    },
+    {
+        "id": "3",
+        "title": "New Blog Title",
+        "excerpt": "Brief summary of the blog.",
+        "date": "2025-01-18",
+        "slug": "new-blog-title"
     }
 ]

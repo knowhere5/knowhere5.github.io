@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export type BlogPost = {
   id: string;
@@ -8,24 +9,26 @@ export type BlogPost = {
   slug: string;
 };
 
-const posts: BlogPost[] = [
-  {
-    id: "1",
-    title: "Building a Minimalist Blog",
-    excerpt: "How I approached building this minimalist blog using React and Tailwind CSS.",
-    date: "2024-03-20",
-    slug: "building-a-minimalist-blog",
-  },
-  {
-    id: "2",
-    title: "The Power of Simplicity",
-    excerpt: "Why less is more in software development and life.",
-    date: "2024-03-15",
-    slug: "the-power-of-simplicity",
-  },
-];
-
 const BlogList = () => {
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch("/bloglist.json");
+        if (!response.ok) {
+          throw new Error("Failed to fetch blog posts");
+        }
+        const data: BlogPost[] = await response.json();
+        setPosts(data);
+      } catch (error) {
+        console.error("Error fetching blog posts:", error);
+      }
+    };
+
+    fetchPosts();
+  }, []);
+
   const isNew = (date: string) => {
     const postDate = new Date(date);
     const now = new Date();

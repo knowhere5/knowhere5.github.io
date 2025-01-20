@@ -1,30 +1,29 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { BlogPost as BlogPostType } from "@/components/BlogList";
 import { Button } from "@/components/ui/button";
 import { Twitter, Linkedin } from "lucide-react";
 
-const posts: BlogPostType[] = [
-  {
-    id: "1",
-    title: "Building a Minimalist Blog",
-    excerpt: "How I approached building this minimalist blog using React and Tailwind CSS.",
-    date: "2024-03-20",
-    slug: "building-a-minimalist-blog",
-  },
-  {
-    id: "2",
-    title: "The Power of Simplicity",
-    excerpt: "Why less is more in software development and life.",
-    date: "2024-03-15",
-    slug: "the-power-of-simplicity",
-  },
-];
-
 const BlogPost = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const post = posts.find((p) => p.slug === slug);
-  const nextPost = posts.find((p) => Number(p.id) === Number(post?.id) + 1);
+  const [posts, setPosts] = useState<BlogPostType[]>([]);
+  const [post, setPost] = useState<BlogPostType | undefined>();
+  const [nextPost, setNextPost] = useState<BlogPostType | undefined>();
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const res = await fetch("/bloglist.json");
+      const data: BlogPostType[] = await res.json();
+      setPosts(data);
+
+      const currentPost = data.find((p) => p.slug === slug);
+      setPost(currentPost);
+      setNextPost(data.find((p) => Number(p.id) === Number(currentPost?.id) + 1));
+    };
+
+    fetchPosts();
+  }, [slug]);
 
   const shareOnTwitter = () => {
     const url = window.location.href;
