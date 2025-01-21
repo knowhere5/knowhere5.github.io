@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "title": "Transcendence Dreams",
+        "excerpt": "I sometimes dream of a strange dystopia where I'm told I'm the last human on Earth—yet the world is populated by robots who believe they're human.",
+        "date": "2025-01-10",
+        "slug": "transcendence-dreams"
+    },
+    {
+        "id": "2",
+        "title": "Chapter 4",
+        "excerpt": "Ingest everything you save into ETHER, turning random data into accessible, integrated knowledge as your second brain.",
+        "date": "2025-01-20",
+        "slug": "chapter-4"
+    },
+    {
+        "id": "3",
+        "title": "Consciousness.txt",
+        "excerpt": "I was thinking about digital consciousness and autonomous AI the other day.",
+        "date": "2025-01-22",
+        "slug": "consciousness-01"
+    }
+]
