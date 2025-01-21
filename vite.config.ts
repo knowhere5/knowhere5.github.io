@@ -22,8 +22,15 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: undefined,
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === '_redirects') {
+            return '_redirects';
+          }
+          return assetInfo.name!;
+        },
+        // manualChunks: undefined,
       },
     },
   },
+  publicDir: 'public',
 }));
