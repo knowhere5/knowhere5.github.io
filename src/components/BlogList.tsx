@@ -43,8 +43,8 @@ const BlogList = () => {
         <article key={post.id} className="max-w-prose">
           <Link to={`/blog/${post.slug}`} className="block group">
             <div className="flex items-center gap-3 mb-2">
-              <h2 className="text-xl group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
-                {post.title}
+              <h2 className="text-xl group-hover:text-gray-600 dark:group-hover:text-gray-200 transition-colors">
+                <b>{post.title}</b>
               </h2>
               {isNew(post.date) && (
                 <span className="text-xs px-2 py-1 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 text-white animate-pulse">

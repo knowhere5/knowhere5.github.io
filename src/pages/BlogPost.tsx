@@ -33,6 +33,12 @@ const BlogPost = () => {
     fetchPosts();
   }, [slug]);
 
+  useEffect(() => {
+    if (post) {
+      document.title = post.title;
+    }
+  }, [post]);  
+
   const shareOnTwitter = () => {
     const url = window.location.href;
     window.open(
@@ -72,7 +78,7 @@ const BlogPost = () => {
       <div className="py-8">
         <Link
           to="/"
-          className="text-gray-500 hover:text-gray-800 dark:hover:text-gray-300 transition-colors"
+          className="text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200 transition-colors"
         >
           ← Homepage
         </Link>
@@ -80,7 +86,7 @@ const BlogPost = () => {
 
       <article className="max-w-prose">
         <h1 className="text-3xl mb-4">{post.title}</h1>
-        <time className="text-sm text-gray-500 mb-8 block">
+        <time className="text-sm text-gray-500 dark:text-gray-400 mb-8 block">
           {new Date(post.date).toLocaleDateString("en-US", {
             year: "numeric",
             month: "long",
@@ -109,7 +115,7 @@ const BlogPost = () => {
         <div className="mt-8 mb-16">
           <Link
             to={`/blog/${nextPost.slug}`}
-            className="text-gray-500 hover:text-gray-800 dark:hover:text-gray-300 transition-colors"
+            className="text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200 transition-colors"
           >
             Read Next: {nextPost.title} →
           </Link>
