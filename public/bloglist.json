@@ -8,16 +8,23 @@
     },
     {
         "id": "2",
-        "title": "Chapter 4",
-        "excerpt": "Ingest everything you save into ETHER, turning random data into accessible, integrated knowledge as your second brain.",
-        "date": "2025-01-20",
-        "slug": "chapter-4"
+        "title": "Consciousness.txt",
+        "excerpt": "I was thinking about digital consciousness and autonomous AI the other day.",
+        "date": "2025-01-18",
+        "slug": "consciousness-01"
     },
     {
         "id": "3",
-        "title": "Consciousness.txt",
-        "excerpt": "I was thinking about digital consciousness and autonomous AI the other day.",
+        "title": "Chapter 4: If I had a second brain",
+        "excerpt": "Ingest everything you save into ETHER, turning random data into accessible, integrated knowledge as your second brain.",
+        "date": "2025-01-21",
+        "slug": "chapter-4"
+    },
+    {
+        "id": "4",
+        "title": "Chapter 5: What is Ether?",
+        "excerpt": "One more draft on Ether before I go to bed.",
         "date": "2025-01-22",
-        "slug": "consciousness-01"
+        "slug": "chapter-5"
     }
 ]
