@@ -32,15 +32,17 @@ const AudioPlayer = () => {
   };
 
   return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={togglePlay}
-      className="fixed bottom-6 left-6 bg-background/20 backdrop-blur-sm hover:bg-background/40 transition-all duration-200"
-      title={isPlaying ? "Pause Music" : "Play Music"}
-    >
-      {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
-    </Button>
+    <div className={`fixed bottom-6 left-6 p-[2px] rounded-md ${isPlaying ? 'animate-border-flow' : 'bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500'}`}>
+      <Button
+        variant="ghost"
+        size="icon"
+        onClick={togglePlay}
+        className="relative bg-background/20 backdrop-blur-sm hover:bg-background/40 transition-all duration-200"
+        title={isPlaying ? "Pause Music" : "Play Music"}
+      >
+        {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
+      </Button>
+    </div>
   );
 };
 
