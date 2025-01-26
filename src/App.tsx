@@ -1,16 +1,16 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import BlogPost from "./pages/BlogPost";
 import ThemeToggle from "./components/ThemeToggle";
 
 const App = () => (
-  <BrowserRouter>
+  <HashRouter>
     <ThemeToggle />
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/blog/:slug" element={<BlogPost />} />
     </Routes>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 export default App;
