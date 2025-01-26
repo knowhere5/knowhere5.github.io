@@ -5,6 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/blogs/', // Add this line for GitHub Pages subdirectory
   server: {
     host: "::",
     port: 8080,
@@ -28,7 +29,6 @@ export default defineConfig(({ mode }) => ({
           }
           return assetInfo.name!;
         },
-        // manualChunks: undefined,
       },
     },
   },
