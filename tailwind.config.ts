@@ -21,6 +21,21 @@ export default {
       maxWidth: {
         'prose': '65ch',
       },
+      keyframes: {
+        "border-flow": {
+          "0%, 100%": {
+            "background-size": "200% 200%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
+        },
+      },
+      animation: {
+        "border-flow": "border-flow 3s ease infinite",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
