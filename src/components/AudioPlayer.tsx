@@ -1,46 +1,65 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { Play, Pause } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import YouTube from "react-youtube";
 
 const AudioPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [player, setPlayer] = useState<any>(null);
 
-  useEffect(() => {
-    // Create audio element
-    audioRef.current = new Audio("https://www.chosic.com/wp-content/uploads/2023/07/synthwave-background-music-for-videos-gaming-8-bit-chiptune.mp3");
-    audioRef.current.loop = true;
-
-    // Cleanup on unmount
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
-    };
-  }, []);
-
+  const videoId = "3Iilv1NlWNU"; // https://www.youtube.com/watch?v=3Iilv1NlWNU
   const togglePlay = () => {
-    if (!audioRef.current) return;
+    if (!player) return;
 
     if (isPlaying) {
-      audioRef.current.pause();
+      player.pauseVideo();
     } else {
-      audioRef.current.play();
+      player.playVideo();
     }
     setIsPlaying(!isPlaying);
   };
 
+  const onReady = (event: any) => {
+    setPlayer(event.target);
+    // Set video quality to the lowest
+    event.target.setPlaybackQuality("small");
+  };
+
+  const onEnd = () => {
+    setIsPlaying(false);
+  };
+
   return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={togglePlay}
-      className="fixed bottom-6 left-6 bg-background/20 backdrop-blur-sm hover:bg-background/40 transition-all duration-200"
-      title={isPlaying ? "Pause Music" : "Play Music"}
-    >
-      {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
-    </Button>
+    <div>
+      {/* YouTube Player (hidden) */}
+      <div style={{ display: "none" }}>
+        <YouTube
+          videoId={videoId}
+          onReady={onReady}
+          onEnd={onEnd}
+          opts={{
+            playerVars: {
+              autoplay: 0, // Don't autoplay by default
+              loop: 1, // Loop the video
+              controls: 0, // Hide controls
+              modestbranding: 1, // Hide YouTube logo
+              quality: "small", // Force lowest quality
+            },
+          }}
+        />
+      </div>
+
+      {/* Play/Pause Button */}
+      <Button
+        variant="ghost"
+        size="icon"
+        onClick={togglePlay}
+        className="fixed bottom-6 left-6 bg-background/20 backdrop-blur-sm hover:bg-background/40 transition-all duration-200"
+        title={isPlaying ? "Pause Music" : "Play Music"}
+      >
+        {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
+      </Button>
+    </div>
   );
 };
 
