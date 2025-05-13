@@ -39,7 +39,7 @@ const BlogList = () => {
 
   return (
     <div className="space-y-16">
-      {posts.map((post) => (
+      {posts.slice().sort((a, b) => Number(b.id) - Number(a.id)).map((post) => (
         <article key={post.id} className="max-w-prose">
           <Link to={`/blog/${post.slug}`} className="block group">
             <div className="flex items-center gap-3 mb-2">
