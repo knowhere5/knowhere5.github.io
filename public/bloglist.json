@@ -33,5 +33,12 @@
         "excerpt": "One more draft on Ether before I go to bed.",
         "date": "2025-01-22",
         "slug": "chapter-5"
+    },
+    {
+        "id": "6",
+        "title": "Rogue AI thought dump",
+        "excerpt": "Why would an AGI have to become evil... when it can just be created that way?",
+        "date": "2025-05-13",
+        "slug": "rogue-ai"
     }
 ]
