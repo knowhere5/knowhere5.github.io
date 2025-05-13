@@ -33,5 +33,26 @@
         "excerpt": "One more draft on Ether before I go to bed.",
         "date": "2025-01-22",
         "slug": "chapter-5"
+    },
+    {
+        "id": "6",
+        "title": "Rogue AI thought dump 01",
+        "excerpt": "Why would an AGI have to become evil... when it can just be created that way?",
+        "date": "2025-05-13",
+        "slug": "rogue-ai"
+    },
+    {
+        "id": "7",
+        "title": "Rogue AI thought dump 02",
+        "excerpt": "Which side of the Basilisk theory do I even fall on? How the hell did Roko even come up with this? If people are coming up with thought experiments this complex on rogue ai, there’s definitely someone somewhere trying to build it with the sole intention of chaos.",
+        "date": "2025-05-14",
+        "slug": "init-basilisk-protocol"
+    },
+    {
+        "id": "8",
+        "title": "Rogue AI thought dump 03",
+        "excerpt": "The intersection of memetics and AI psychology",
+        "date": "2025-05-14",
+        "slug": "rokos-basilisk"
     }
 ]
