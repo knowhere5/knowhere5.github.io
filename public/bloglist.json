@@ -47,5 +47,12 @@
         "excerpt": "Which side of the Basilisk theory do I even fall on? How the hell did Roko even come up with this? If people are coming up with thought experiments this complex on rogue ai, there’s definitely someone somewhere trying to build it with the sole intention of chaos.",
         "date": "2025-05-14",
         "slug": "init-basilisk-protocol"
+    },
+    {
+        "id": "8",
+        "title": "Rogue AI thought dump 03",
+        "excerpt": "The intersection of memetics and AI psychology",
+        "date": "2025-05-14",
+        "slug": "rokos-basilisk"
     }
 ]
