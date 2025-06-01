@@ -54,5 +54,12 @@
         "excerpt": "The intersection of memetics and AI psychology",
         "date": "2025-05-14",
         "slug": "rokos-basilisk"
+    },
+    {
+        "id": "9",
+        "title": "Building the first working prototype of ether",
+        "excerpt": "Putting all my other researchs on hold and building the ether mvp",
+        "date": "2025-06-02",
+        "slug": "first-working-prototype-of-ether"
     }
 ]
